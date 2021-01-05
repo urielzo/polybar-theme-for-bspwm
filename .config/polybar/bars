@@ -1,0 +1,115 @@
+[module/volume_bar]
+type = internal/pulseaudio
+format-volume = <label-volume><bar-volume>
+format-muted = <label-muted>
+
+label-volume = "   %{B#242424 F#415CBA}%{F-}%{F#ff00ff}"
+label-volume-foreground = ${color.primary}
+format-volume-background =${color.bg}
+format-volume-foreground = ${color.fg}
+
+format-muted-prefix =
+label-muted = ""
+label-muted-foreground = ${color.fg}
+
+bar-volume-width = 22
+bar-volume-gradient = true
+bar-volume-indicator = "%{T3}█%{T-}"
+bar-volume-indicator-foreground = #415CBA
+bar-volume-indicator-font = 2
+bar-volume-fill ="%{T3}█%{T-}"
+bar-volume-foreground-0 = #415CBA
+bar-volume-foreground-1 = #415CBA
+bar-volume-foreground-2 = #415CBA
+bar-volume-foreground-3 = #415CBA
+bar-volume-fill-font = 2
+bar-volume-empty ="%{T3}█%{T-}"
+bar-volume-empty-foreground = ${color.primary}
+bar-volume-empty-font = 2
+#-----------------------------------------------------------------------------#
+[module/volume_bar2]
+type = internal/pulseaudio
+format-volume = <ramp-volume>
+format-muted = <label-muted>
+label-volume = "%{B#242424 F#8e99b0}%{F-}%{F$color.bg}   "
+label-volume-foreground = ${color.fg}
+format-volume-background =${color.bg}
+format-volume-foreground = ${color.fg}
+format-muted-prefix =
+label-muted = " "
+label-muted-foreground = ${color.fg}
+ramp-volume-0 =""
+ramp-volume-1 =""
+ramp-volume-2 =""
+ramp-volume-3 =""
+ramp-volume-4 =""
+ramp-volume-foreground = ${color.primary}
+ramp-headphones-0 ="   "
+ramp-headphones-1 ="   "
+
+;#####################################################
+
+[module/mpd_bar2]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+interval = 1
+format-online = <label-time>
+label-time = "  %total%"
+label-time-foreground = ${color.fg}
+label-time-background = ${color.bg}
+label-offline = "mpd is offline"
+#-----------------------------------------------------------------------------#
+[module/mpd_bar]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+interval = 1
+format-online = <label-time><bar-progress><icon-stop>
+label-time ="   %{B#242424 F#415CBA}%{F-}"
+label-time-foreground = ${color.primary}
+label-time-background = ${color.bg}
+label-offline = "mpd is offline"
+bar-progress-width =37
+bar-progress-background = ${color.bg}
+bar-progress-foreground = #415CBA
+bar-progress-gradient = false
+
+bar-progress-indicator ="█"
+bar-progress-indicator-foreground = #415CBA
+bar-progress-indicator-background = ${color.bg}
+bar-progress-indicator-font = 2
+
+bar-progress-fill ="█"
+bar-progress-fill-background= ${color.bg}
+bar-progress-fill-foreground= #415CBA
+
+bar-progress-foreground-0 = #415CBA
+bar-progress-background-0 = ${color.bg}
+bar-progress-foreground-1 = #415CBA
+bar-progress-background-1 = ${color.bg}
+bar-progress-foreground-2 = #415CBA
+bar-progress-background-2 = ${color.bg}
+bar-progress-foreground-3 = #415CBA
+bar-progress-background-3 = ${color.bg}
+bar-progress-foreground-4 = #415CBA
+bar-progress-background-4 = ${color.bg}
+bar-progress-foreground-5 = #415CBA
+bar-progress-background-5 = ${color.bg}
+bar-progress-foreground-6 = #415CBA
+bar-progress-background-6 = ${color.bg}
+bar-progress-foreground-7 = #415CBA
+bar-progress-background-7 = ${color.bg}
+bar-progress-foreground-8 = #415CBA
+bar-progress-background-8 = ${color.bg}
+bar-progress-fill-font = 2
+
+bar-progress-empty ="█"
+bar-progress-empty-foreground = ${color.primary}
+bar-progress-empty-background = ${color.bg}
+bar-progress-empty-font = 2
+icon-stop = 
+icon-stop-foreground =${color.primary}
+
+;#####################################################
+;bindsym $mod+m exec urxvt -g 70x10 -e ncmpcpp -c ~/.ncmpcpp/ncmpcpp2

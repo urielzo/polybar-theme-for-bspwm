@@ -1,0 +1,82 @@
+/* dmenu config */
+
+@import "theme"
+
+* {
+	window-width:         1920px;
+	window-border:        0px;
+	window-margin:        30px 0 0 0;
+
+	element-padding:      6px 15px;
+	element-border:       0 0 2px;
+
+	input-padding:        @element-padding;
+
+	entry-margin:         0 0 -1px;
+	entry-margin:         0 5px -1px;
+
+	prompt-padding:       0px 3px;
+	prompt-margin:        0 0 0 3px;
+
+	colon-margin:         1px 3px -1px;
+	colon-margin:         0 0 0 5px;
+}
+
+#window {
+	width:      @window-width;
+	border:     @window-border;
+	margin:     @window-margin;
+	padding:    0px;
+	anchor:     north;
+	location:   north;
+	children:   [ horibox ];
+}
+
+#horibox {
+	spacing:     0;
+	orientation: horizontal;
+	children:    [ inputbar, listview ];
+}
+
+#listview {
+	layout:      horizontal;
+	lines:       100;
+	spacing:     0;
+}
+
+#element {
+	padding:      @element-padding;
+}
+
+#element.selected.normal, element.selected.active {
+	border:       @element-border;
+}
+
+#inputbar {
+	border:           0;
+	margin:           0;
+	padding:          @input-padding;
+	children:         [ textbox-prompt-colon, entry ];
+	background-color: @ibg;
+}
+
+#entry {
+	width:            10em;
+	expand:           false;
+	background-color: @ibg;
+	margin:           @entry-margin;
+}
+
+#prompt {
+	margin:           @prompt-margin;
+	padding:          @prompt-padding;
+	background-color: @ibg;
+}
+
+#textbox-prompt-colon {
+	str:              "›";
+	color:            @dpc;
+	expand:           false;
+	background-color: @ibg;
+	margin:           @colon-margin;
+}

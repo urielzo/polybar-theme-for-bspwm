@@ -1,0 +1,9 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "WhiteSur";
+  modi: "windowcd,keys,window,file-browser,drun,ssh,combi,run";
+  combi-modi: "windowcd,keys,window,file-browser,drun,ssh,run";
+
+}

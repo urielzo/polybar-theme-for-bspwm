@@ -1,0 +1,181 @@
+configuration {
+	me-select-entry:	"MouseSecondary";
+	me-accept-entry:	"MousePrimary";
+	/* run-display-format: "{name}"; */
+	scroll-method: 1;
+  show-icons: true;
+  sidebar-mode: true;
+  kb-custom-1: "";
+  kb-custom-2: "";
+  kb-custom-3: "";
+  kb-custom-4: "";
+  kb-custom-5: "";
+  kb-custom-6: "";
+  kb-custom-7: "";
+  kb-custom-8: "";
+  kb-custom-9: "";
+  kb-custom-10: "";
+  kb-select-1: "Alt+1";
+  kb-select-2: "Alt+2";
+  kb-select-3: "Alt+3";
+  kb-select-4: "Alt+4";
+  kb-select-5: "Alt+5";
+  kb-select-6: "Alt+6";
+  kb-select-7: "Alt+7";
+  kb-select-8: "Alt+8";
+  kb-select-9: "Alt+9";
+  kb-select-10: "Alt+0";
+}
+
+* {
+
+	/* COLORS */
+
+  /* BLACK */
+  BLACK: #242424;
+  LBLACK: #161616;
+
+  /* RED */
+  RED: #93222b;
+  LRED: #b6333f;
+
+  /* WHITE */
+  WHITE: #FCFCFC;
+  LWHITE: #414245;
+
+  /* GOLD */
+  GOLD: #b18e68;
+  LGOLD: #e1b084;
+
+  /* GREY */
+  GREY: #e1b084;
+  LGREY: #bcb6b7;
+  TRANSPARENT: rgba(0,0,0,0);
+	background: #242424; /* BLACK */
+
+	/* HIGHLIGHT */
+	HIGHLIGHT: #242424;
+	DHIGHLIGHT: #332b3b;
+
+
+	background: @BLACK;
+	background-color: @BLACK;
+	foreground: @WHITE;
+	selected: @LRED;
+	selected-foreground: #FFFFFF;
+
+	/* TEXT */
+	font:	"Noto Sans 10";
+  text-color: @foreground;
+
+	/* PADDING */
+	margin:	0px;
+	border:	0px;
+	padding: 0px;
+	spacing: 0px;
+	elementpadding: 2px 20px;
+	elementmargin: -1px -29px;
+	listmargin:	5px 5px 5px 5px;
+
+	/* ////	SIZE	//// */
+	windowwidth:	13%;
+	buttonwidth:	0ch;
+	lines:			8;
+	fixed-height:	true;
+	windowheight: 30%;
+
+	/* ////	POSITION	//// */
+	location:		west;
+	anchor:			west;
+	x-offset:		2px;
+	y-offset:		-289px;
+
+	/* ////	LAYOUT	//// */
+	scrollbar:		false;
+	buttonpadding:	0px 0ch;
+	button-bg:		@background;
+	dynamic:		false;
+	menustyle: [sb-mainbox];
+	background-color: @HIGHLIGHT;
+	font: "Noto Sans 9";
+	transparency:    "real";
+}
+
+
+window {
+	children: @menustyle;
+	width: @windowwidth;
+	height: @windowheight;
+	border-radius: 0px 0px 12px 12px;
+}
+
+/* submenu-style */
+sb-mainbox {
+	orientation:	horizontal;
+	children:		[ vertibox ];
+}
+
+horibox {
+	orientation:	horizontal;
+	children:		[ listview ];
+}
+
+mode-switcher {
+	orientation:	vertical;
+	height: @windowheight;
+	background-color: @background;
+}
+
+button {
+	horizontal-align:	0;
+	padding:		@buttonpadding;
+	width:			@buttonwidth;
+	background-color: @button-bg;
+	expand:			false;
+}
+
+vertibox {
+	orientation:	vertical;
+	children:		[ listview ];
+	background-color:	@background-color;
+}
+
+listview {
+	margin:			@listmargin;
+	background-color: @HIGHLIGHT;
+}
+
+
+boxdummy {
+	enabled:		false;
+	orientation:	vertical;
+	expand:			false;
+	children:		[ textboxdummy ];
+
+}
+
+textboxdummy {
+	str:			"		";
+	background-color: #FF0000;
+}
+
+element.normal.active,
+element.alternate.active {
+	background-color:	#FF0000;
+	text-color:			@selected-foreground;
+}
+element.selected
+ {
+	background-color:	#415CBA;
+	text-color:			@selected-foreground;
+	border-radius: 3px 3px 3px 3px;
+}
+element.normal.urgent,
+element.alternate.urgent {
+	background-color:	@urgent-background;
+	text-color:			@urgent-foreground;
+}
+element.selected.urgent {
+	background-color:	@selected-urgent-background;
+	text-color:			@selected-urgent-foreground;
+}
